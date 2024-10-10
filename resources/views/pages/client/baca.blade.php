@@ -1,6 +1,8 @@
 @extends('layout2.client.umum')
 
-@section('title', "{!! $baca->judul !!}")
+@section('title')
+{!! $baca->judul !!}
+@endsection
 
 @section('content')
 <main class="main" id="hero">
