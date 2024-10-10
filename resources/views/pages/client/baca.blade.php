@@ -1,7 +1,7 @@
 @extends('layout2.client.umum')
 
 @section('title')
-{!! $baca->judul !!}
+{{ strtoupper($baca->judul) }}
 @endsection
 
 @section('content')
