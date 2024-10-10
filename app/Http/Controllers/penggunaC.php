@@ -42,7 +42,7 @@ class penggunaC extends Controller
 
         User::findOrFail($iduser)->update(["password" => $password]);
 
-        return redirect()->back()->with('warning', "Password berhasil di reset menjadi <br><h2>$SPass</h2>");
+        return redirect()->back()->with('success', "Password berhasil di reset menjadi <br><h2><b>$SPass</b></h2>");
 
     }
 
