@@ -46,7 +46,9 @@
             @foreach ($konten as $item)
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card product-card h-100">
-                    <img src="{{ url('gambar/konten', [$item->gambar]) }}" alt="Product Image" >
+                    <a href="{{ route('baca.konten', [$item->idkonten]) }}" class="">
+                        <img src="{{ url('gambar/konten', [$item->gambar]) }}" alt="Product Image" >
+                    </a>
                     <div class="card-body">
                         <h5 class="product-title" class="btnku ">
                             <a href="{{ route('baca.konten', [$item->idkonten]) }}" class="">
