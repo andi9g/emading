@@ -92,7 +92,7 @@ class kontenC extends Controller
 
             $ex = strtolower($extension);
             if($ex == 'jpg' || $ex == 'jpeg' || $ex == 'png') {
-                if($size > 2000000) {
+                if($size > 5000000) {
                     return redirect()->back()->with('toast_error', 'Maaf, maksimal gambar adalah 1Mb');
                 }
                 $filename = sha1(strtotime(date('Y-m-d H:i:s'))).uniqid().'.'.$extension;
