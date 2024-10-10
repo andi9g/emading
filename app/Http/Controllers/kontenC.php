@@ -79,9 +79,10 @@ class kontenC extends Controller
     {
         $request->validate([
             'judul'=>'required',
-            'tags'=>'required',
+            // 'tags'=>'required',
             'konten'=>'required',
         ]);
+
 
 
         if($request->hasFile('gambar')) {
@@ -111,7 +112,11 @@ class kontenC extends Controller
         $konten = trim($konten_mentah);
         $konten = stripslashes($konten);
         $data['konten'] = htmlspecialchars($konten);
-        $data["tags"] = implode(",", $request->tags);
+        if(empty($request->tags)) {
+            $data["tags"] = "NoTags";
+        }else {
+            $data["tags"] = implode(",", $request->tags);
+        }
         $data["gambar"] = $filename;
         $data['iduser'] = Auth::user()->iduser;
 
