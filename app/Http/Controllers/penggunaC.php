@@ -35,9 +35,15 @@ class penggunaC extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function reset(Request $request)
+    public function reset(Request $request, $iduser)
     {
-        //
+        $SPass = "admin".date("Y");
+        $password = Hash::make($SPass);
+
+        User::findOrFail($iduser)->update(["password" => $password]);
+
+        return redirect()->back()->with('warning', "Password berhasil di reset menjadi <br><h2>$SPass</h2>");
+
     }
 
     /**

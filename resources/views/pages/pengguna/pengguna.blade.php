@@ -98,7 +98,6 @@
 
                                 <form action='{{ route('pengguna.reset', [$item->iduser]) }}' method='post' class='d-inline'>
                                      @csrf
-                                     @method('DELETE')
                                      <button type='submit' class='badge bg-warning badge-btn border-0 text-dark' onclick="return confirm('Yakin ingin direset?')">
                                          <i class="bi bi-key"></i> Reset
                                      </button>

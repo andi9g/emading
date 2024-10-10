@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
 
     //pengguna
     Route::resource("pengguna", "penggunaC");
-    Route::post("reset/pengguna", "penggunaC@reset")->name("pengguna.reset");
+    Route::post("reset/pengguna/{iduser}", "penggunaC@reset")->name("pengguna.reset");
 
     //konten
     Route::resource("konten", "kontenC");
